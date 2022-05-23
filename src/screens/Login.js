@@ -48,10 +48,10 @@ const Login = () => {
     return (
         <div className="login-screen">
             <div className="login-container">
-                <h1 className="title"><i className="bx bxs-movie"/> CinemaTEC</h1>
+                <h1 className="title"><i className="bx bxs-plane"/> AIFA Gate Schedule</h1>
                 <div className="login-form">
                     <h2>Log in</h2>
-                    <p>Log in to view your movie lists</p>
+                    <p>Log in to view your gate reservations</p>
                     <div className="login-input">
                         <i className="bx bxs-envelope" />
                         <input name="email" type="email" placeholder="Email" value={email} onChange={handleInputChange} />

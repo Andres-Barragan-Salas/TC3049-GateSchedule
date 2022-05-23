@@ -1,0 +1,21 @@
+.gates-screen {
+    display: flex;
+	align-items: center;
+	flex-direction: column;
+	flex: 1;
+}
+
+.gates-screen .safe-area {
+	width: 100%;
+	max-width: var(--max-width);
+    padding: 30px;
+}
+
+.gates-screen h1 {
+    font-weight: normal;
+    margin-bottom: 40px;
+}
+
+.gates-screen h1 span {
+    color: var(--white-text);
+}

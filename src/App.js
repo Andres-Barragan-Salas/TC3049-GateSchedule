@@ -10,7 +10,7 @@ import Header from './components/Header';
 import store from './store/store';
 import Login from './screens/Login';
 import SignUp from './screens/SignUp';
-// import Movies from './screens/Movies';
+import Gates from './screens/Gates';
 
 import NotFound from './screens/NotFound';
 
@@ -31,7 +31,7 @@ function App() {
 
 	if (loading) {
 		return (
-			<div className="cinema-tec-app">
+			<div className="gate-schedule-app">
 				<LoadingSpinner centered />
 			</div>
 		);
@@ -39,7 +39,7 @@ function App() {
 
 	if (!id) {
 		return (
-			<div className="cinema-tec-app">
+			<div className="gate-schedule-app">
 				<Routes>
 					<Route exact path="/signup" element={<SignUp />} />
 					<Route path="*" element={<Login />} />
@@ -49,10 +49,10 @@ function App() {
 	}
 
 	return (
-		<div className="cinema-tec-app">
+		<div className="gate-schedule-app">
 			<Header />
 			<Routes>
-				{/* <Route exact path="/" element={<Movies />} /> */}
+				<Route exact path="/" element={<Gates />} />
 				<Route path="*" element={<NotFound />} />
 			</Routes>
 		</div>

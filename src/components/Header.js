@@ -36,9 +36,9 @@ const Header = () => {
             <div className="safe-area">
                 <div className="header-container">
                     <div className="header-left">
-                        <h1 className="title"><i className="bx bxs-movie"/> CinemaTEC</h1>
-                        <Link to="/" className={pathname === '/' ? 'active' : ''}>Movies</Link>
-                        <Link to="/lists" className={pathname === '/lists' ? 'active' : ''}>My lists</Link>
+                        <h1 className="title"><i className="bx bxs-plane"/> AIFA Gate Schedule</h1>
+                        <Link to="/" className={pathname === '/' ? 'active' : ''}>Gates</Link>
+                        {/* <Link to="/reservations" className={pathname === '/reservations' ? 'active' : ''}>My reservations</Link> */}
                     </div>
                     <div className="header-right">
                         <h2>Welcome <span>{username}</span>!</h2>

@@ -49,10 +49,10 @@ const SignUp = () => {
     return (
         <div className="signup-screen">
             <div className="signup-container">
-                <h1 className="title"><i className="bx bxs-movie"/> CinemaTEC</h1>
+                <h1 className="title"><i className="bx bxs-plane"/> AIFA Gate Schedule</h1>
                 <div className="signup-form">
                     <h2>Sign up</h2>
-                    <p>Created by movie lovers for movie lovcer</p>
+                    <p>Authorized airline representatives only!</p>
                     <div className="signup-input">
                         <i className="bx bxs-user-circle" />
                         <input name="username" type="text" placeholder="Username" value={username} onChange={handleInputChange} />
