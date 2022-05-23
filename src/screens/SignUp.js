@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-import cinemaTecApi from '../api/cinemaTecApi';
-import { setToken } from '../store/slices/authSlice';
+import { createUser } from '../calls/auth';
 import { validateEmail } from '../util/validators';
-import store from '../store/store';
 
 import './SignUp.css';
 
@@ -38,12 +36,11 @@ const SignUp = () => {
         if (validFields()) {
             try {
                 setLoading(true);
-                const response = await cinemaTecApi.post('/signup', { username, email, password });
-                store.dispatch(setToken(response.data));
+                await createUser(signupForm);
                 navigate('/');
             } catch (err) {
                 console.error(err);
-                alert(err.response.data.error);
+                alert(err.message);
             }
             setLoading(false);
         }

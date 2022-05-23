@@ -3,17 +3,17 @@ import { createSlice } from '@reduxjs/toolkit';
 export const userSlice = createSlice({
     name: 'user',
     initialState: {
+        id: null,
         username: null,
         email: null,
-        likedMovies: [],
-        unlikedMovies: []
+        loading: true
     },
     reducers: {
         setUser: (_state, { payload }) => {
             return { ...payload };
         },
         resetUser: () => {
-            return { username: null, email: null, likedMovies: [], unlikedMovies: [] };
+            return { id: null, username: null, email: null, loading: false };
         }
     }
 });

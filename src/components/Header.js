@@ -2,8 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-import { removeToken } from '../store/slices/authSlice';
-import store from '../store/store';
+import { signUserOut } from '../calls/auth';
 
 import './Header.css';
 
@@ -27,8 +26,8 @@ const Header = () => {
         }
     }, [ref, optionsOpen]);
 
-    const logout = () => {
-        store.dispatch(removeToken());
+    const logout = async () => {
+        await signUserOut();
         navigate('/');
     };
 
