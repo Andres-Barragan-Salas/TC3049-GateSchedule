@@ -58,13 +58,28 @@ const GateCell = ({ gate }) => {
                 user: { id, username, email } 
             };
             await updateGateDoc(gate.id, params);
-            setReservationForm({ airline: '', reservation_date: '', reservation_time: '' });
+            setReservationForm({ airline: '', reservation_date: minDate, reservation_time: '00:00' });
             setReservationCreationOpen(false);
         } catch (err) {
             console.error(err);
             alert(err.message);
         }
         setLoadingReservation(false);
+    }
+
+    const renderReservations = () => {
+        return gate_reservations.map((reservation) => {
+            const { airline, reservation_date, reservation_time, status } = reservation;
+
+            return (
+                <div className="reservation-cell">
+                    <p className="field">{airline}</p>
+                    <p className="field">{reservation_date}</p>
+                    <p className="field">{reservation_time}</p>
+                    <p className="status">{status}</p>
+                </div>
+            );
+        });
     }
 
     return  (
@@ -82,7 +97,7 @@ const GateCell = ({ gate }) => {
             <div className="reservation-container">
                 {gate_reservations.length === 0
                     ?   <p className="empty-reservations">No reservations found</p>
-                    :   <div></div>
+                    :   renderReservations()
                 }
             </div>
             <Modal active={reservationCreationOpen} onDismiss={() => setReservationCreationOpen(false)}>

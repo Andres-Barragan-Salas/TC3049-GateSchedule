@@ -44,6 +44,20 @@
     margin-top: 15px;
 }
 
+.gate-cell .reservation-cell {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 10px 0;
+}
+
+.gate-cell .reservation-cell:not(:last-child) {
+    border-bottom: 1px solid #FFF2;
+}
+
+.gate-cell .reservation-cell > * {
+    margin: 0;
+}
+
 .reservation-creation {
     background: #fff;
     width: 100%;
