@@ -19,6 +19,13 @@ export const listenGatesInformation = (setGates, setLoading) => {
 }
 
 export const updateGateDoc = async (id, data) => {
+    const currentDate = new Date();
+    const reservationInfo = {
+        ...data,
+        created_at: currentDate.toISOString(),
+        status: 'PENDING'
+    };
+
     await runTransaction(db, async (transaction) => {
         const gateDocRef = doc(db, 'gates', id);
 
@@ -28,7 +35,7 @@ export const updateGateDoc = async (id, data) => {
         const params = {
             gate_reservations: [
                 ...gateInfo.gate_reservations,
-                data
+                reservationInfo
             ]
         };
 
