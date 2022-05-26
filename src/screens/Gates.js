@@ -29,8 +29,17 @@ const Gates = () => {
             const { gate_number, gate_reservations, gate_type } = gate;
 
             return  (
-                <div>
-                    <h2>Gate {gate_number}</h2>
+                <div className="gate-display">
+                    <div className="gate-top">
+                        <h3>Gate {gate_number} | <span>{gate_type.toUpperCase()}</span></h3>
+                        <button>Reserve</button>
+                    </div>
+                    <div className="reservation-container">
+                        {gate_reservations.length === 0
+                            ?   <p className="empty-reservations">No reservations found</p>
+                            :   <div></div>
+                        }
+                    </div>
                 </div>
             );
         })
