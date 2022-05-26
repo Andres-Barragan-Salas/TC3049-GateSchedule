@@ -1,0 +1,116 @@
+.gate-cell {
+    background: var(--white-panel);
+    padding: 30px;
+    border-radius: 10px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.gate-cell .cell-top {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--white-outline);
+}
+
+.gate-cell .cell-top h3 {
+    color: #fff;
+    margin: 0;
+}
+
+.gate-cell .cell-top h3 > span {
+    font-weight: 500;
+    color: var(--white-text);
+    margin-left: 5px;
+}
+
+.gate-cell .cell-top h3 > span > i {
+    margin-left: 10px;
+}
+
+.gate-cell .cell-top button {
+    cursor: pointer;
+    border: none;
+    color: #FFF;
+    background: #FFF3;
+    border-radius: 5px;
+}
+
+.gate-cell .cell-top button:hover {
+    background: #FFF5;
+}
+
+.gate-cell .empty-reservations {
+    margin-top: 15px;
+}
+
+.reservation-creation {
+    background: #fff;
+    width: 100%;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.reservation-creation .reservation-creation-input {
+    position: relative;
+}
+
+.reservation-creation .reservation-creation-input > i {
+    position: absolute;
+    top: 9px; left: 20px;
+    font-size: 20px;
+}
+
+.reservation-creation .reservation-creation-input > input {
+    background: none;
+    border: none;
+    width: 100%;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 10px 15px 10px 55px;
+    margin-bottom: 15px;
+}
+
+.reservation-creation .reservation-creation-input > input:focus {
+    outline: none;
+    border: 2px solid var(--action-blue);
+}
+
+.reservation-creation .reservation-creation-input > input[type="time"],
+.reservation-creation .reservation-creation-input > input[type="date"] {
+    position: relative;
+}
+  
+.reservation-creation .reservation-creation-input > input[type="time"]::-webkit-calendar-picker-indicator,
+.reservation-creation .reservation-creation-input > input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 0; left: -25px; right: 0; bottom: 0;
+    width: auto;
+    height: auto;
+    color: transparent;
+    background: transparent;
+}
+
+.reservation-creation .options-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reservation-creation .options-container .error-message {
+    color: red;
+    margin: 0;
+}
+
+.reservation-creation .options-container button {
+    cursor: pointer;
+	border: none;
+	padding: 12px;
+	border-radius: 8px;
+    background: var(--action-blue);
+	color: #fff;
+}
+
+.reservation-creation .options-container button:hover {
+	opacity: 0.8;
+}

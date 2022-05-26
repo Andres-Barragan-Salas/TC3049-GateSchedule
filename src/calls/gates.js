@@ -1,7 +1,7 @@
-import { onSnapshot, collection, query, orderBy } from 'firebase/firestore';
+import { doc, onSnapshot, collection, query, orderBy, runTransaction } from 'firebase/firestore';
 
 import { db } from '../firebase-config';
-import { formatGates } from './fmt';
+import { formatGates, formatGate } from './fmt';
 
 export const listenGatesInformation = (setGates, setLoading) => {
     const unsub = onSnapshot(query(
@@ -16,4 +16,22 @@ export const listenGatesInformation = (setGates, setLoading) => {
     });
 
     return unsub;
+}
+
+export const updateGateDoc = async (id, data) => {
+    await runTransaction(db, async (transaction) => {
+        const gateDocRef = doc(db, 'gates', id);
+
+        const gateDoc = await transaction.get(gateDocRef);
+        const gateInfo = formatGate(gateDoc);
+        
+        const params = {
+            gate_reservations: [
+                ...gateInfo.gate_reservations,
+                data
+            ]
+        };
+
+        transaction.update(gateDocRef, params);
+    });
 }

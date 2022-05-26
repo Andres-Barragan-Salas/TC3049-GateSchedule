@@ -7,5 +7,6 @@ export const formatGate = (gateDoc) => {
 
     return {
         ...gateData,
+        id: gateDoc.id
     }
 }
